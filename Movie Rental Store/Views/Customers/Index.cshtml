@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Movie_Rental_Store.Models.Customer>
+
+<h2>List of Customers</h2>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.ActionLink(item.Name, "Details", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>
